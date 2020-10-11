@@ -1,10 +1,12 @@
 
 // Fonction appelée lors du click du bouton
 function start() {
+  // Récuperation de ce que j'ai entré dans mon text field
+  //ville = document.getElementById('city-input').value;
   // Création de l'objet apiWeather
-  const apiWeather = new API_WEATHER();
+  const apiWeather = new API_WEATHER(document.getElementById('city-input').value);
+  
   // Appel de la fonction fetchTodayForecast
-
   apiWeather
     .fetchTodayForecast()
     .then(function(response) {
